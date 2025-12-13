@@ -56,7 +56,7 @@ As a **Mid-Level SRE**, I specialize in bridging the gap between development and
 
 ### 🐍 Contribution Activity
 <div align="center">
-  <img src="https://raw.githubusercontent.com/AbdullahDawii/AbdullahDawii/output/dist/github-contribution-grid-snake.svg" alt="snake animation" width="100%"/>
+  <img src="https://raw.githubusercontent.com/AbdullahDawii/AbdullahDawii/main/github-contribution-grid-snake.svg" alt="snake animation" width="100%"/>
 </div>
 
 ---
