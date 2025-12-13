@@ -2,29 +2,29 @@ name: Generate Snake Simple
 
 on:
   schedule:
-    - cron: "0 0 * * *" # تشغيل يومي
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
   generate:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # نحافظ على صلاحية الكتابة
+      contents: write # هام جداً: لصلاحية الدفع
 
     steps:
       - uses: actions/checkout@v4
       
-      # توليد ملف SVG في المجلد الرئيسي للريبو
+      # 1. توليد ملف SVG في المجلد الرئيسي للريبو
       - name: generate github-contribution-grid-snake.svg
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            github-contribution-grid-snake.svg
+            github-contribution-grid-snake.svg  # لا يوجد مجلد dist هنا
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
-      # نشر الملف الجديد مباشرةً إلى فرع main/master
+      # 2. نشر الملف الجديد مباشرةً إلى فرع main/master
       - name: Push the Snake SVG to the Repository
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
